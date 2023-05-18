@@ -61,7 +61,7 @@ export default function Nav() {
               onClick={() => redirectToRandom()}
               className="hover:underline text-sm sm:text-lg "
             >
-              <h4>Zoo </h4>
+              <h4>AI Images </h4>
             </button>
             <Link
               className="flex text-sm sm:text-lg sm:pl-2"
@@ -71,7 +71,7 @@ export default function Nav() {
                 <span className="hidden sm:inline text-zinc-500 font-light">
                   Image Playground
                 </span>
-                <span className="sm:hidden inline">Powered</span> by Replicate
+                <span className="sm:hidden inline">Powered</span> by AI Tutor
               </span>
             </Link>
           </div>
