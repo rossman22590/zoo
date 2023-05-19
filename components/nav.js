@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import seeds from "../lib/seeds";
+import {
+  CodeBracketIcon,
+  DocumentDuplicateIcon,
+  PhotoIcon,
+} from "@heroicons/react/20/solid";
 
 export default function Nav() {
   const router = useRouter();
@@ -64,12 +69,18 @@ export default function Nav() {
               <h4>AI Images </h4>
             </button>
             <Link
-              className="flex text-sm sm:text-lg sm:pl-2"
+              className="flex text-sm lg:text-base sm:pl-2 text-zinc-500 font-light hover:underline"
+              href="https://github.com/replicate/zoo?utm_source=project&utm_campaign=zoo"
+            >
+              Open Source
+            </Link>
+            <Link
+              className="flex text-sm lg:text-base sm:pl-1"
               href="https://replicate.com?utm_source=project&utm_campaign=zoo"
             >
               <span className="text-zinc-500 font-light hover:underline">
                 <span className="hidden sm:inline text-zinc-500 font-light">
-                  Image Playground
+                  Playground
                 </span>
                 <span className="sm:hidden inline">Powered</span> by AI Tutor
               </span>
@@ -89,6 +100,14 @@ export default function Nav() {
               </>
             ) : (
               <div className="flex">
+                <Link
+                  href="https://github.com/replicate/zoo?utm_source=project&utm_campaign=zoo"
+                  type="button"
+                  className="inline-flex mr-3 items-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700"
+                >
+                  <CodeBracketIcon className="h-5 w-5 bg- text-gray-100 mr-2 hidden sm:inline-flex" />{" "}
+                  Code
+                </Link>
                 {id && (
                   <button
                     onClick={() => copyToClipboard()}
@@ -98,7 +117,8 @@ export default function Nav() {
                     {linkCopied ? (
                       "Copied!"
                     ) : (
-                      <span>
+                      <span className="flex">
+                        <DocumentDuplicateIcon className="h-5 w-5 text-gray-400 mr-2 hidden sm:inline-flex" />
                         Copy <span className="hidden sm:inline-flex">link</span>
                       </span>
                     )}
@@ -109,6 +129,7 @@ export default function Nav() {
                   type="button"
                   className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
+                  <PhotoIcon className="h-5 w-5 text-gray-400 mr-2 hidden sm: inline-flex" />
                   Memories
                 </Link>
               </div>
