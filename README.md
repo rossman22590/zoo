@@ -12,16 +12,20 @@ Install dependencies:
 npm install
 ```
 
-Add your [Replicate API token](https://replicate.com/account#token) to `.env.local`:
+Then, copy the `.env.example` file, name it `.env.local`, and fill in your credentials.
 
-```
-REPLICATE_API_TOKEN=<your-token-here>
-```
+You'll need a running ngrok server to receive the [webhooks](https://replicate.com/docs/reference/http#predictions.create--webhook) from Replicate.
 
-Run the development server:
+To do this, [install ngrok](https://ngrok.com/), and run it with `ngrok http 3000`. You'll see two forwarding addresses. Copy the `https` URL and enter it as your `NGROK_URL`
+
+Then, run the development server:
 
 ```console
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+## Deploying on Vercel
+
+Alternatively, you can [deploy Zoo on Vercel](./doc/deploy_vercel/README.md).
